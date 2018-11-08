@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			local:MvxBind="Visible IsDisconnected;"
+			android:orientation="vertical">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Mail adress" />
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				local:MvxBind="Text Mail"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Password" />
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:password="true"
+				local:MvxBind="Text Password"/>
+
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Connect"
+				local:MvxBind="Click Connect; Enabled ConnectEnabled;"
+			/>
+
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Subscribe"
+				local:MvxBind="Click Subscribe; Enabled SubscribeEnabled;"
+			/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				local:MvxBind="Text Status" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			local:MvxBind="Visible IsConnected;"
+			android:orientation="vertical">
+		
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Get Notifications" />
+				<Switch 
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					local:MvxBind="Checked IsNotificationsEnabled; Click ChangeNotificationState"/>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				local:MvxBind="Visible IsNotificationsEnabled">
+				<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Customize notifications" />
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Notify on startup" />
+					<Switch 
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						local:MvxBind="Checked IsNotificationsStartupEnabled; Click ChangeNotificationParameters"/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Notify on shutdown" />
+					<Switch 
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						local:MvxBind="Checked IsNotificationsShutdownEnabled; Click ChangeNotificationParameters"/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Notify on disconnect" />
+					<Switch 
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						local:MvxBind="Checked IsNotificationsDisconnectEnabled; Click ChangeNotificationParameters"/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Notify on error" />
+					<Switch 
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						local:MvxBind="Checked IsNotificationsErrorEnabled; Click ChangeNotificationParameters"/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Notify on print start" />
+					<Switch 
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						local:MvxBind="Checked IsNotificationsPrintStartedEnabled; Click ChangeNotificationParameters"/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Notify on print done" />
+					<Switch 
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						local:MvxBind="Checked IsNotificationsPrintDoneEnabled; Click ChangeNotificationParameters"/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Notify on print failed" />
+					<Switch 
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						local:MvxBind="Checked IsNotificationsPrintFailedEnabled; Click ChangeNotificationParameters"/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Notify on print canceled" />
+					<Switch 
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						local:MvxBind="Checked IsNotificationsPrintCanceledEnabled; Click ChangeNotificationParameters"/>
+				</LinearLayout>
+			</LinearLayout>
+		
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Disconnect"
+				local:MvxBind="Click Disconnect; Enabled DisconnectEnabled;"
+			/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				local:MvxBind="Text Status" />
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>

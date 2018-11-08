@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Octoprint</string>
+    <string name="action_settings">Settings</string>
+    <string name="gcm_defaultSenderId">1057560883054</string>
+</resources>

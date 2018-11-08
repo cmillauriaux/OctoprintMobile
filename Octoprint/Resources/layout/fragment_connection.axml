@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<TextView 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Ports"
+	/>
+
+	<mvvmcross.platforms.android.binding.views.MvxSpinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="ItemsSource Ports; SelectedItem SelectedPort; Enabled ConnectEnabled"
+	/>
+
+	<TextView 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Baudrates"
+	/>
+
+	<mvvmcross.platforms.android.binding.views.MvxSpinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="ItemsSource Baudrates; SelectedItem BaudRateSelected; Enabled ConnectEnabled"
+	/>
+
+	<TextView 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Profile"
+	/>
+
+	<mvvmcross.platforms.android.binding.views.MvxSpinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="ItemsSource Profiles; SelectedItem ProfileSelected; Enabled ConnectEnabled"
+	/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+			<Switch
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				local:MvxBind="Enabled ConnectEnabled"/>
+			<TextView 
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Save"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+			<Switch
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				local:MvxBind="Enabled ConnectEnabled"/>
+			<TextView 
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Autoconnect"/>
+	</LinearLayout>
+	
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Connection"
+		local:MvxBind="Click Connect; Enabled ConnectEnabled; Visible ConnectVisible"
+	/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Déconnection"
+		local:MvxBind="Click Disconnect; Enabled DisconnectEnabled; Visible DisconnectVisible"
+	/>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:text="Déconnection du compte"
+			local:MvxBind="Click DisconnectAccount"
+		/>
+	</RelativeLayout>
+</LinearLayout>

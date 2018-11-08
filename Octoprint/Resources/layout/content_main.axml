@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:orientation="vertical"
+    local:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main">
+
+	<ImageView 
+		android:src="@drawable/octoprint"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		android:scaleType="centerInside"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Local IP" />
+
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="Text LocalIP"/>
+		
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remote IP" />
+
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="Text RemoteIP"/>
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="API Key" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		local:MvxBind="Text APIKey"/>
+		<ImageButton
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/qrcode"
+			local:MvxBind="Click TakeQrCode" />
+	</LinearLayout>
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User (optionnal)" />
+
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="Text User"/>
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password (optionnal)"/>
+
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="Text Password"
+		android:password="true"/>
+
+	<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+		android:textAlignment="center"
+		android:visibility="gone"
+		local:MvxBind="Visibility Visibility(ShowError); Text Error"/>
+
+	<ProgressBar
+	   android:layout_width="match_parent"
+	   android:layout_height="wrap_content"
+	   android:layout_centerHorizontal="true"
+	   android:visibility="gone"
+	   local:MvxBind="Visibility Visibility(ShowLoading)"/>
+
+	<Button 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Connect to Octoprint"
+		local:MvxBind="Click Connect; Enabled ConnectEnabled"/>
+
+</LinearLayout>
