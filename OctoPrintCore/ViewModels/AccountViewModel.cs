@@ -1,13 +1,8 @@
 ﻿using MvvmCross.Commands;
-using MvvmCross.Navigation;
-using MvvmCross.Plugin.Messenger;
 using MvvmCross.ViewModels;
 using OctoPrintCore.Model;
 using OctoPrintCore.Services;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace OctoPrintCore.ViewModels
@@ -42,7 +37,9 @@ namespace OctoPrintCore.ViewModels
         }
 
         #region Attributes
+
         private bool _connect_enabled;
+
         public bool ConnectEnabled
         {
             get => _connect_enabled;
@@ -54,6 +51,7 @@ namespace OctoPrintCore.ViewModels
         }
 
         private bool _subscribe_enabled;
+
         public bool SubscribeEnabled
         {
             get => _subscribe_enabled;
@@ -65,6 +63,7 @@ namespace OctoPrintCore.ViewModels
         }
 
         private bool _disconnect_enabled;
+
         public bool DisconnectEnabled
         {
             get => _disconnect_enabled;
@@ -76,6 +75,7 @@ namespace OctoPrintCore.ViewModels
         }
 
         private string _mail;
+
         public string Mail
         {
             get => _mail;
@@ -87,6 +87,7 @@ namespace OctoPrintCore.ViewModels
         }
 
         private string _password;
+
         public string Password
         {
             get => _password;
@@ -98,6 +99,7 @@ namespace OctoPrintCore.ViewModels
         }
 
         private string _status;
+
         public string Status
         {
             get => _status;
@@ -109,6 +111,7 @@ namespace OctoPrintCore.ViewModels
         }
 
         private bool _isConnected;
+
         public bool IsConnected
         {
             get => _isConnected;
@@ -120,6 +123,7 @@ namespace OctoPrintCore.ViewModels
         }
 
         private bool _isDisconnected;
+
         public bool IsDisconnected
         {
             get => _isDisconnected;
@@ -131,6 +135,7 @@ namespace OctoPrintCore.ViewModels
         }
 
         private bool _isNotificationsEnabled;
+
         public bool IsNotificationsEnabled
         {
             get => _isNotificationsEnabled;
@@ -140,9 +145,11 @@ namespace OctoPrintCore.ViewModels
                 RaisePropertyChanged(() => IsNotificationsEnabled);
             }
         }
-        #endregion
+
+        #endregion Attributes
 
         #region Commands
+
         public IMvxCommand Connect
         {
             get { return new MvxCommand(ConnectCommandAsync); }
@@ -235,12 +242,14 @@ namespace OctoPrintCore.ViewModels
             if (IsNotificationsEnabled)
             {
                 await _firebaseNotifications.Register(await _firebaseAuth.GetToken());
-            } else
+            }
+            else
             {
                 await _firebaseNotifications.Unregister(await _firebaseAuth.GetToken());
             }
         }
-        #endregion
+
+        #endregion Commands
 
         #region Methods
 
@@ -296,6 +305,7 @@ namespace OctoPrintCore.ViewModels
             }
             UpdateButtonState();
         }
-        #endregion
+
+        #endregion Methods
     }
 }

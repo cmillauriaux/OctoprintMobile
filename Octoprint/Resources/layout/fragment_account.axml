@@ -10,11 +10,18 @@
 		android:layout_height="match_parent"
 		android:orientation="vertical">
 
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+				style="@style/Title"
+			android:text="My account" />
+
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			local:MvxBind="Visible IsDisconnected;"
 			android:orientation="vertical">
+			
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -61,6 +68,19 @@
 			android:layout_height="wrap_content"
 			local:MvxBind="Visible IsConnected;"
 			android:orientation="vertical">
+
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Disconnect"
+				local:MvxBind="Click Disconnect; Enabled DisconnectEnabled;"
+			/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				style="@style/Title"
+				android:text="Notifications" />
 		
 			<LinearLayout
 				android:layout_width="match_parent"
@@ -190,18 +210,25 @@
 						local:MvxBind="Checked IsNotificationsPrintCanceledEnabled; Click ChangeNotificationParameters"/>
 				</LinearLayout>
 			</LinearLayout>
-		
-			<Button
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:text="Disconnect"
-				local:MvxBind="Click Disconnect; Enabled DisconnectEnabled;"
-			/>
 
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				local:MvxBind="Text Status" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			local:MvxBind="Visible IsConnected;"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				style="@style/Title"
+				android:text="Octoprint's instances" />
+
 		</LinearLayout>
 	</LinearLayout>
 </ScrollView>

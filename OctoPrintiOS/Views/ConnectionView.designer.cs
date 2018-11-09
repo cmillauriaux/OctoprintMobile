@@ -7,12 +7,12 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
-namespace OctoPrintiOS
+namespace OctoPrintiOS.Views
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("ConnectionView")]
+    partial class ConnectionView
     {
+
     }
 }

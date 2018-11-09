@@ -8006,14 +8006,14 @@ namespace Octoprint
 			// aapt resource value: 0x7f0d018d
 			public const int AppTheme = 2131558797;
 			
-			// aapt resource value: 0x7f0d0190
-			public const int AppTheme_AppBarOverlay = 2131558800;
-			
-			// aapt resource value: 0x7f0d018f
-			public const int AppTheme_NoActionBar = 2131558799;
-			
 			// aapt resource value: 0x7f0d0191
-			public const int AppTheme_PopupOverlay = 2131558801;
+			public const int AppTheme_AppBarOverlay = 2131558801;
+			
+			// aapt resource value: 0x7f0d0190
+			public const int AppTheme_NoActionBar = 2131558800;
+			
+			// aapt resource value: 0x7f0d0192
+			public const int AppTheme_PopupOverlay = 2131558802;
 			
 			// aapt resource value: 0x7f0d00a7
 			public const int Base_AlertDialog_AppCompat = 2131558567;
@@ -8504,8 +8504,8 @@ namespace Octoprint
 			// aapt resource value: 0x7f0d016e
 			public const int Base_Widget_Design_TabLayout = 2131558766;
 			
-			// aapt resource value: 0x7f0d018e
-			public const int MyCustomButton = 2131558798;
+			// aapt resource value: 0x7f0d018f
+			public const int MyCustomButton = 2131558799;
 			
 			// aapt resource value: 0x7f0d002b
 			public const int Platform_AppCompat = 2131558443;
@@ -8935,6 +8935,9 @@ namespace Octoprint
 			
 			// aapt resource value: 0x7f0d011a
 			public const int ThemeOverlay_AppCompat_Light = 2131558682;
+			
+			// aapt resource value: 0x7f0d018e
+			public const int Title = 2131558798;
 			
 			// aapt resource value: 0x7f0d011b
 			public const int Widget_AppCompat_ActionBar = 2131558683;
