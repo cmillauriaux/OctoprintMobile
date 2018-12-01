@@ -24,8 +24,8 @@ namespace OctoPrintCore.ViewModels
             await base.Initialize();
             this.LoadUserProperties();
             ConnectEnabled = true;
-
-            
+            ShowDirectConnection = true;
+            ShowRemoteConnection = false;
         }
 
         public async override void ViewAppeared()
@@ -34,6 +34,50 @@ namespace OctoPrintCore.ViewModels
             if (!string.IsNullOrEmpty(UserProperties.GetLocalIP()) && !string.IsNullOrEmpty(UserProperties.GetApiKey()))
             {
                 await _navigationService.Navigate<MainViewModel>();
+            }
+        }
+
+        private string _mailRemote;
+        public string MailRemote
+        {
+            get => _mailRemote;
+            set
+            {
+                _mailRemote = value;
+                RaisePropertyChanged(() => MailRemote);
+            }
+        }
+
+        private string _passwordRemote;
+        public string PasswordRemote
+        {
+            get => _passwordRemote;
+            set
+            {
+                _passwordRemote = value;
+                RaisePropertyChanged(() => PasswordRemote);
+            }
+        }
+
+        private bool _showRemoteConnection;
+        public bool ShowRemoteConnection
+        {
+            get => _showRemoteConnection;
+            set
+            {
+                _showRemoteConnection = value;
+                RaisePropertyChanged(() => ShowRemoteConnection);
+            }
+        }
+
+        private bool _showDirectConnection;
+        public bool ShowDirectConnection
+        {
+            get => _showDirectConnection;
+            set
+            {
+                _showDirectConnection = value;
+                RaisePropertyChanged(() => ShowDirectConnection);
             }
         }
 

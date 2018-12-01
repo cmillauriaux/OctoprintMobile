@@ -1,0 +1,31 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			local:MvxBind="Text PrinterName" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			local:MvxBind="Text PrinterIP" />
+	</LinearLayout>
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="55dp">
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_alignParentRight="true"
+			android:text="Connect"
+			local:MvxBind="Click Connect;Enabled ConnectEnabled;" />
+	</RelativeLayout>
+</LinearLayout>

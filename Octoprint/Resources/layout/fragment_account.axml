@@ -69,11 +69,17 @@
 			local:MvxBind="Visible IsConnected;"
 			android:orientation="vertical">
 
-			<Button
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				style="@style/Title"
+				android:text="Octoprint's instances" />
+
+			<mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:text="Disconnect"
-				local:MvxBind="Click Disconnect; Enabled DisconnectEnabled;"
+				local:MvxItemTemplate="@layout/item_octoprint_instance"
+				local:MvxBind="ItemsSource Instances"
 			/>
 
 			<TextView
@@ -222,13 +228,12 @@
 			android:layout_height="wrap_content"
 			local:MvxBind="Visible IsConnected;"
 			android:orientation="vertical">
-
-			<TextView
-				android:layout_width="wrap_content"
+			<Button
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				style="@style/Title"
-				android:text="Octoprint's instances" />
-
+				android:text="Disconnect"
+				local:MvxBind="Click Disconnect; Enabled DisconnectEnabled;"
+			/>
 		</LinearLayout>
 	</LinearLayout>
 </ScrollView>

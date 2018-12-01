@@ -7,7 +7,7 @@ namespace OctoPrintCore
     public class Constants
     {
         public static string BASE_URL = "http://";
-        public static string BASE_SERVER_URL = "http://192.168.1.186:5000/octomobile-2aecc/us-central1";
+        public static string BASE_SERVER_URL = "https://us-central1-octomobile-2aecc.cloudfunctions.net";
 
         public static string API_VERSION = "/api/version";
         public static string API_CONNECTION = "/api/connection";

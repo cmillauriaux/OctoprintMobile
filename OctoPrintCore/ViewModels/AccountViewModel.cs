@@ -4,6 +4,7 @@ using OctoPrintCore.Model;
 using OctoPrintCore.Services;
 using System;
 using System.Threading.Tasks;
+using MvvmCross;
 
 namespace OctoPrintCore.ViewModels
 {
@@ -20,6 +21,7 @@ namespace OctoPrintCore.ViewModels
             _firebaseAuth = firebaseAuth;
             _firebaseNotifications = firebaseNotifications;
             _accountService = accountService;
+            Instances = new MvxObservableCollection<OctoprintInstanceViewModel>();
             ConnectEnabled = true;
             SubscribeEnabled = true;
             DisconnectEnabled = true;
@@ -34,6 +36,10 @@ namespace OctoPrintCore.ViewModels
         {
             base.ViewAppeared();
             this.GetAccountProperties();
+            OctoprintInstanceViewModel instance = Mvx.IoCConstruct<OctoprintInstanceViewModel>();
+            instance.PrinterIP = "192.168.1.34";
+            instance.PrinterName = "Test";
+            Instances.Add(instance);
         }
 
         #region Attributes
@@ -143,6 +149,18 @@ namespace OctoPrintCore.ViewModels
             {
                 _isNotificationsEnabled = value;
                 RaisePropertyChanged(() => IsNotificationsEnabled);
+            }
+        }
+
+        private MvxObservableCollection<OctoprintInstanceViewModel> _instances;
+
+        public MvxObservableCollection<OctoprintInstanceViewModel> Instances
+        {
+            get => _instances;
+            set
+            {
+                _instances = value;
+                RaisePropertyChanged(() => Instances);
             }
         }
 
